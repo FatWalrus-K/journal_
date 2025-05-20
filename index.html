@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Study Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div id="login-screen">
+    <h2>Enter Password</h2>
+    <input type="password" id="password-input" placeholder="Password" />
+    <button onclick="checkPassword()">Enter</button>
+  </div>
+
+  <div id="app" style="display: none;">
+    <h1>📅 Study Journal</h1>
+    <div class="container">
+      <div id="calendar"></div>
+      <div id="entry-form">
+        <h2 id="entry-date-title">Select a date</h2>
+        <form id="study-form">
+          <div id="subjects-container"></div>
+          <button type="button" onclick="addSubject()">+ Subject</button>
+          <textarea placeholder="General Notes" id="general-notes"></textarea>
+          <button type="submit">Save Entry</button>
+        </form>
+        <div id="entry-actions">
+          <button onclick="deleteEntry()">Delete Entry</button>
+        </div>
+      </div>
+    </div>
+    <div id="stats">
+      <h2>📊 Statistics</h2>
+      <canvas id="statsChart"></canvas>
+      <div id="statsTable"></div>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
